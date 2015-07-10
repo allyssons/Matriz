@@ -14,8 +14,8 @@ int main(){
 	cout << "2 - Subtração"<<endl;
 	cout << "3 - Multiplicação"<<endl;
 	cout << "4 - Transposta"<<endl;
-	cin >> opt;	
-
+	cin >> opt;
+    cout >> "loko";
 	while(opt){
 		cout<<"Digite o número de linhas e de colunas da primeira matriz: ";
 		cin>>linha>>coluna;
@@ -23,8 +23,8 @@ int main(){
 		cout<<"Digite o número de linhas e de colunas da segunda matriz: ";
 		cin>>linha>>coluna;
 		Matriz<int> *B = new Matriz<int>(linha, coluna);
-		Matriz<int> *C = new Matriz<int>(); 
-		
+		Matriz<int> *C = new Matriz<int>();
+
 		int a;
 		cout<<"Digite os valores da primeira matriz"<<endl;
 		for (i = 0; i < A->getnl(); ++i){
@@ -55,7 +55,7 @@ int main(){
 			else
 				cout<< endl << "Matrizes não podem ser operadas" << endl;
 		}
-		
+
 		//Subtração
 		if (opt == 2){
 			if ((A->getnl() == B->getnl()) && (A->getnc() == B->getnc())){
@@ -71,7 +71,7 @@ int main(){
 			else
 				cout<< endl << "Matrizes não podem ser operadas" << endl;
 		}
-		
+
 		//Multiplicação
 		if (opt == 3){
 			if ((A->getnc() == B->getnl())){
@@ -86,8 +86,8 @@ int main(){
 			}
 			else
 				cout << endl << "Matrizes não podem ser operadas" << endl;
-		}		
-	
+		}
+
 		//Transposta
 		if (opt == 4){
 			cout << endl;
@@ -102,7 +102,7 @@ int main(){
 			cout << endl;
 			cout << "B:" << endl;
 			*C = *B / *A;
-		
+
 			for (i = 0; i < C->getnl(); ++i){
 				for (j = 0; j < C->getnc(); ++j){
 					cout << C->get(i, j) << ' ';
